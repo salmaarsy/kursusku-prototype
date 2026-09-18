@@ -48,6 +48,8 @@ $year = date('Y'); ?>
         <h3>Laravel Dasar</h3>
         <p> Mengenal framework, route, controller, view, dan database. </p>
       </article>
+      <a href="fee-calculator.php">Lihat estimasi biaya</a> 
+
     </section> 
     <section id="alur">
       <h2>Cara Mendaftar</h2>
@@ -71,7 +73,8 @@ $year = date('Y'); ?>
       <p> Alamat: Bukittinggi </p>
     </section>
   </main>
-  <footer> <small> &copy; <?= $year ?> <?= htmlspecialchars($siteName) ?> </small> </footer>
+  <footer>
+    <small> &copy; <?= $year ?> <?= htmlspecialchars($siteName) ?> </small>
+  </footer>
 </body>
-
 </html>
