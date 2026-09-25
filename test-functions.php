@@ -7,10 +7,7 @@ $tests = [
     ['Tersedia', statusKursus(30, 29), 'Tersedia'],
     ['Sisa Kosong', sisaKursi(20, 0), 20],
     ['Sisa Penuh', sisaKursi(25, 25), 0],
-    ['Penuh', statusKursus(25, 25), 'Penuh'],
-    ['Tersedia', statusKursus(30, 29), 'Tersedia'],
-    ['Sisa Kosong', sisaKursi(20, 0), 20],
-    ['Sisa Penuh', sisaKursi(25, 25), 0],
+    ['Tanggal', formatTanggal('2026-09-15'), '15-09-2026'],
 ];
 
 foreach ($tests as [$name, $actual, $expected]) {
