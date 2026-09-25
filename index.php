@@ -114,11 +114,6 @@ $year = date('Y');
       font-weight: 800;
     }
 
-
-    /* ==============================
-       HEADER
-    ============================== */
-
     header {
       position: sticky;
       top: 0;
@@ -175,11 +170,6 @@ $year = date('Y');
     nav a:hover::after {
       width: 100%;
     }
-
-
-    /* ==============================
-       HERO
-    ============================== */
 
     #hero {
       width: 100%;
@@ -264,11 +254,6 @@ $year = date('Y');
       box-shadow: 0 15px 30px rgba(0,0,0,.3);
     }
 
-
-    /* ==============================
-       KEUNGGULAN
-    ============================== */
-
     #keunggulan {
       padding-top: 90px;
     }
@@ -307,11 +292,6 @@ $year = date('Y');
       color: #6f6878;
       font-size: 14px;
     }
-
-
-    /* ==============================
-       KATALOG
-    ============================== */
 
     #katalog {
       max-width: none;
@@ -373,11 +353,6 @@ $year = date('Y');
       color: #5b3190;
     }
 
-
-    /* ==============================
-       STATUS
-    ============================== */
-
     .badge-available,
     .badge-full {
       display: inline-block;
@@ -419,11 +394,6 @@ $year = date('Y');
       box-shadow: 0 8px 20px rgba(58,34,87,.25);
     }
 
-
-    /* ==============================
-       COURSE DETAIL
-    ============================== */
-
     #katalog ~ article {
       width: 90%;
       max-width: 350px;
@@ -440,11 +410,6 @@ $year = date('Y');
       color: #3a2257;
       margin-bottom: 10px;
     }
-
-
-    /* ==============================
-       CARA MENDAFTAR
-    ============================== */
 
     #alur {
       background: white;
@@ -501,11 +466,6 @@ $year = date('Y');
       font-weight: 700;
     }
 
-
-    /* ==============================
-       MEDIA
-    ============================== */
-
     #media {
       text-align: center;
     }
@@ -529,10 +489,8 @@ $year = date('Y');
       display: inline-block;
       padding: 10px 20px;
       border-radius: 10px;
-
       background: #3a2257;
       color: white;
-
       transition: .3s;
     }
 
@@ -540,11 +498,6 @@ $year = date('Y');
       background: #7048a8;
       transform: translateY(-2px);
     }
-
-
-    /* ==============================
-       KONTAK
-    ============================== */
 
     #kontak {
       max-width: none;
@@ -576,11 +529,6 @@ $year = date('Y');
       margin: 8px;
     }
 
-
-    /* ==============================
-       FOOTER
-    ============================== */
-
     footer {
       padding: 25px;
       text-align: center;
@@ -590,11 +538,6 @@ $year = date('Y');
 
       font-size: 13px;
     }
-
-
-    /* ==============================
-       RESPONSIVE
-    ============================== */
 
     @media (max-width: 850px) {
 
@@ -846,8 +789,8 @@ $year = date('Y');
       <h2>Kenali Program Kami</h2>
 
       <img
-        src="assets/images/hero-kursus.jpg"
-        alt="Mahasiswa sedang mengikuti kegiatan kursus komputer"
+        src="assets/images/image-kursus.jpeg"
+        alt="gambar"
         width="640"
       >
 
@@ -855,7 +798,7 @@ $year = date('Y');
 
       <video controls width="640">
         <source
-          src="assets/video/intro-kursus.mp4"
+          src="assets/video/video-kursus.mp4"
           type="video/mp4"
         >
         Browser Anda tidak mendukung video HTML5.

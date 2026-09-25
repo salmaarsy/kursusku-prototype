@@ -1,15 +1,12 @@
 <?php
 $courseName = 'Laravel Fundamental';
-$fee = 350000;
-$participantCount = 2;
+$fee = 0;
+$participantCount = 1;
 $discountPercent = 10;
-$adminFee = 25000;
+$adminFee = 0;
 $isActive = True;
 ?>
-<?php
-$fee= 350000; //assigment
-$message = 'Biaya: Rp ' . $fee; // concatenation dengan titik
-?>
+
 <?php
 $subtotal = $fee * $participantCount;
 $discount = intdiv($subtotal * $discountPercent, 100);

@@ -1,0 +1,9 @@
+Local:
+website dijalan menggunakan Laragon
+URL menggunakan domain lokal:
+http://kursusku-prototype.test/
+
+Hosting:
+Website dapat dipublikasikan ke server hosting apabila tersedia akun atau server kelas 
+
+pada tugas ini pengujian dilakukan pada lingkungan local
