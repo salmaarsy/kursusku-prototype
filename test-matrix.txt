@@ -1,0 +1,74 @@
+TEST MATRIX
+Pertemuan 5 - Form Pendaftaran Kursus
+
+No. 1 - Load form
+Test     : Load form
+Langkah  : Buka registration.php
+Status   : Lulus
+Catatan  : Form tampil tanpa error.
+
+No. 2 - Required
+Test     : Required
+Langkah  : Kirim form dalam keadaan kosong
+Status   : Lulus
+Catatan  : Browser menahan field yang wajib diisi.
+
+No. 3 - Email
+Test     : Validasi email
+Langkah  : Isi email dengan format "abc"
+Status   : Lulus
+Catatan  : Browser meminta format email yang valid.
+
+No. 4 - Nama pendek
+Test     : Validasi nama
+Langkah  : Isi nama dengan dua karakter
+Status   : Lulus
+Catatan  : minlength mencegah submit jika nama terlalu pendek.
+
+No. 5 - GET
+Test     : GET
+Langkah  : Ubah method menjadi GET lalu submit data latihan
+Status   : Lulus
+Catatan  : Parameter form terlihat pada URL.
+
+No. 6 - POST
+Test     : POST
+Langkah  : Kembalikan method ke POST lalu submit
+Status   : Lulus
+Catatan  : Data ditampilkan kembali dan tidak muncul pada URL.
+
+No. 7 - Radio
+Test     : Radio
+Langkah  : Pilih Mahasiswa/Umum
+Status   : Lulus
+Catatan  : Nilai pilihan muncul pada ringkasan.
+
+No. 8 - Checkbox
+Test     : Checkbox
+Langkah  : Pilih dua minat
+Status   : Lulus
+Catatan  : Dua nilai minat muncul setelah digabung.
+
+No. 9 - Textarea
+Test     : Textarea
+Langkah  : Isi catatan singkat
+Status   : Lulus
+Catatan  : Isi catatan ditampilkan kembali dengan aman.
+
+No. 10 - Hidden
+Test     : Hidden
+Langkah  : Submit form
+Status   : Lulus
+Catatan  : Sumber week-05 diterima.
+
+No. 11 - Mobile
+Test     : Responsive mobile
+Langkah  : Uji tampilan sekitar 360 px
+Status   : Lulus
+Catatan  : Form menjadi satu kolom dan tidak terjadi horizontal overflow.
+
+No. 12 - Navigasi
+Test     : Navigasi
+Langkah  : Beranda -> Katalog -> Daftar
+Status   : Lulus
+Catatan  : Setiap link menuju halaman yang sesuai.
