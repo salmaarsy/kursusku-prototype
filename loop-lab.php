@@ -29,6 +29,7 @@ $facilities = [
     'Modul digital',
     'Sertifikat penyelesaian',
     'Forum diskusi kelas',
+    'MATAHARI',
 ];
 
 ?>

@@ -2,6 +2,7 @@
 require __DIR__ . '/data.php';
 require __DIR__ . '/helpers.php';
 
+
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     header('Location: registration.php');
     exit;
@@ -59,13 +60,12 @@ $errors = [];
 
 // Validasi nama
 if ($name === '') {
-    $errors[] = 'Nama wajib diisi.';
+    $errors[] = 'Nama wajib diisi';
 }
 
-
 // Validasi email
-if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    $errors[] = 'Format email tidak valid.';
+if ($email === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    $errors[] = 'Email tidak valid';
 }
 
 

@@ -76,45 +76,50 @@ require __DIR__ . '/helpers.php';
 
 
                 <!-- ================= NAMA ================= -->
-                <div class="form-group">
+                <!-- ================= NAMA ================= -->
+<div class="form-group">
 
-                    <label for="name">
-                        Nama Lengkap
-                    </label>
+    <label for="name">
+        Nama Lengkap
+    </label>
 
-                    <input
-                        id="name"
-                        name="name"
-                        type="text"
-                        minlength="3"
-                        maxlength="100"
-                        autocomplete="name"
-                        placeholder="Masukkan nama lengkap"
-                        required
-                    >
+    <input
+        id="name"
+        name="name"
+        type="text"
+        minlength="3"
+        maxlength="100"
+        autocomplete="name"
+        placeholder="Masukkan nama lengkap"
+        required
+        oninvalid="this.setCustomValidity('Nama wajib diisi')"
+        oninput="this.setCustomValidity('')"
+    >
 
-                </div>
+</div>
 
 
                 <!-- ================= EMAIL ================= -->
-                <div class="form-group">
+                <!-- ================= EMAIL ================= -->
+<div class="form-group">
 
-                    <label for="email">
-                        Email
-                    </label>
+    <label for="email">
+        Email
+    </label>
 
-                    <input
-                        id="email"
-                        name="email"
-                        type="email"
-                        maxlength="120"
-                        autocomplete="email"
-                        placeholder="contoh@email.com"
-                        required
-                    >
+    <input
+        id="email"
+        name="email"
+        type="email"
+        maxlength="120"
+        autocomplete="email"
+        placeholder="contoh@email.com"
+        required
+        oninvalid="this.setCustomValidity('Email tidak valid')"
+        oninput="this.setCustomValidity('')"
+    >
 
-                </div>
-
+</div>
 
                 <!-- ================= HP + PRODI ================= -->
                 <div class="form-grid">
