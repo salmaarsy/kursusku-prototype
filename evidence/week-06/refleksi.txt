@@ -1,0 +1,21 @@
+================
+BAGIAN REFLEKSI
+================
+
+Bagian paling saya pahami: 
+Saya paham tentang percabangan dan looping.
+Percabangan digunakan untuk menentukan pilihan berdasarkan kondisi,
+sedangkan looping digunakan untuk mengulang suatu proses
+
+Bagian yang masih membingungkan:
+Saya bingung ketika harus menggabungkan beberapa bagian kode
+ seperti form, validasi, percangan dan looping agar semuanya dapat berjalan dengan baik
+
+Satu bug yang saya temukan:
+Saya menemukan bug pada bagian validasi email
+
+Cara saya memperbaikinya:
+Saya mengecek kembali kode dan memperbaiki bagian validasi email, lalu mencoba menjalankannya kembali
+
+Perbedaan branching dan looping menurut saya:
+branching digunakan untuk memilih berdasarkan kondisi, sedangkan looping digunakan untuk mengulang perintah.
