@@ -1,9 +1,9 @@
 <?php
 $courseName = 'Laravel Fundamental';
-$fee = 0;
-$participantCount = 1;
+$fee = 350000;
+$participantCount = 2;
 $discountPercent = 10;
-$adminFee = 0;
+$adminFee = 25000;
 $isActive = True;
 ?>
 
@@ -12,18 +12,13 @@ $subtotal = $fee * $participantCount;
 $discount = intdiv($subtotal * $discountPercent, 100);
 $total = $subtotal - $discount + $adminFee;
 ?>
-<?php
-echo 'Biaya: Rp ' . number_format($fee, 0, ',', '.') . '<br';
-echo 'Subtotal: Rp ' . number_format($subtotal, 0, ',', '.') . '<br';
-echo 'Diskon: Rp ' . number_format($discount, 0, ',', '.') . '<br';
-echo 'Admin: Rp ' . number_format($adminFee, 0, ',', '.') . '<br';
-echo 'Total: Rp ' . number_format($total, 0, ',', '.') . '<br';
-?>
+
 <!doctype html>
 <html lang="id">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/style.css">
     <title>Kalkulator Biaya Kursusku</title>
 <style>
     body{font-family: Arial, sans-serif; background: #f5f7f6;margin:0; padding: 32px; color: #16332c)
@@ -37,7 +32,7 @@ echo 'Total: Rp ' . number_format($total, 0, ',', '.') . '<br';
 <body>
 <main class="card">
 <h1>Kalkulator Estimasi Biaya</h1>
-<p>Kursus: <strong><?= $courseName ?></strong></p>
+<p>Kursus: <strong> <?= $courseName ?></strong></p>
 
 <table>
     <tr><th>Komponen</th><th>Nilai</th></tr>
@@ -55,3 +50,4 @@ number_format($discount, 0,',','.') ?></td></tr>
     </main>
 </body>
 </html>
+
