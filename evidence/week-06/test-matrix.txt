@@ -29,17 +29,14 @@ Status  : PASS
 Test #  : 5
 Input   : Nama kosong
 Expect  : Muncul pesan nama wajib diisi
-Actual  : Tidak muncul pesan
-Status  : FAIL
-Fix     : form tidak bisa dikirim sampai formatnya benar
-
+Actual  : Memunculkan pesan nama wajib diisi
+Status  : PASS
 
 Test #  : 6
 Input   : Email bukan format email
 Expect  : Muncul pesan email tidak valid
-Actual  : Tidak muncul pesan
-Status  : FAIL
-Fix     : form tidak bisa dikirim sampai formatnya benar
+Actual  : Memunculkan pesan email tidak valid
+Status  : PASS
 
 Test #  : 7
 Input   : Tidak memilih minat

@@ -14,6 +14,27 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 $name = trim($_POST['name'] ?? '');
 $email = trim($_POST['email'] ?? '');
+$errors = [];
+
+if ($name === '') {
+    $errors[] = 'Nama wajib diisi';
+}
+
+if ($email === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    $errors[] = 'Email tidak valid';
+}
+
+if ($errors !== []) {
+    echo '<h2>Data Belum Valid</h2>';
+
+    foreach ($errors as $error) {
+        echo '<p>' . e($error) . '</p>';
+    }
+
+    echo '<a href="registration.php">Kembali ke Form</a>';
+
+    exit;
+}
 
 $phone = trim($_POST['phone'] ?? '');
 $studyProgram = trim($_POST['study_program'] ?? '');
@@ -56,7 +77,6 @@ $interests = array_values(
 // ==================================================
 
 $errors = [];
-
 
 // Validasi nama
 if ($name === '') {

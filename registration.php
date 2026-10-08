@@ -1,6 +1,28 @@
 <?php
+
 require __DIR__ . '/data.php';
 require __DIR__ . '/helpers.php';
+
+$errors = [];
+
+$name = '';
+$email = '';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    $name = trim($_POST['name'] ?? '');
+    $email = trim($_POST['email'] ?? '');
+
+    // Validasi nama
+    if ($name === '') {
+        $errors['name'] = 'Nama wajib diisi';
+    }
+
+    // Validasi email
+    if ($email === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $errors['email'] = 'Email tidak valid';
+    }
+}
 ?>
 
 <!doctype html>
@@ -63,7 +85,7 @@ require __DIR__ . '/helpers.php';
 
             <form
                 method="POST"
-                action="process.php"
+                action=""
                 class="registration-form"
             >
 
@@ -76,7 +98,7 @@ require __DIR__ . '/helpers.php';
 
 
                 <!-- ================= NAMA ================= -->
-                <!-- ================= NAMA ================= -->
+               
 <div class="form-group">
 
     <label for="name">
@@ -87,20 +109,22 @@ require __DIR__ . '/helpers.php';
         id="name"
         name="name"
         type="text"
-        minlength="3"
         maxlength="100"
         autocomplete="name"
         placeholder="Masukkan nama lengkap"
-        required
-        oninvalid="this.setCustomValidity('Nama wajib diisi')"
-        oninput="this.setCustomValidity('')"
+        value="<?= e($name) ?>"
     >
+
+    <?php if (isset($errors['name'])): ?>
+        <small class="error-message">
+            <?= e($errors['name']) ?>
+        </small>
+    <?php endif; ?>
 
 </div>
 
+                <!-- ================= EMAIL ================= -->
 
-                <!-- ================= EMAIL ================= -->
-                <!-- ================= EMAIL ================= -->
 <div class="form-group">
 
     <label for="email">
@@ -110,14 +134,18 @@ require __DIR__ . '/helpers.php';
     <input
         id="email"
         name="email"
-        type="email"
+        type="text"
         maxlength="120"
         autocomplete="email"
         placeholder="contoh@email.com"
-        required
-        oninvalid="this.setCustomValidity('Email tidak valid')"
-        oninput="this.setCustomValidity('')"
+        value="<?= e($email) ?>"
     >
+
+    <?php if (isset($errors['email'])): ?>
+        <small class="error-message">
+            <?= e($errors['email']) ?>
+        </small>
+    <?php endif; ?>
 
 </div>
 
@@ -138,7 +166,7 @@ require __DIR__ . '/helpers.php';
                             maxlength="15"
                             autocomplete="tel"
                             placeholder="081234567890"
-                            required
+    
                         >
 
                     </div>
@@ -157,7 +185,7 @@ require __DIR__ . '/helpers.php';
                             type="text"
                             maxlength="100"
                             placeholder="Contoh: Teknik Informatika"
-                            required
+                            
                         >
 
                     </div>
@@ -175,7 +203,7 @@ require __DIR__ . '/helpers.php';
                     <select
                         id="course_code"
                         name="course_code"
-                        required
+                     
                     >
 
                         <option value="">
@@ -209,7 +237,7 @@ require __DIR__ . '/helpers.php';
                             type="radio"
                             name="participant_type"
                             value="mahasiswa"
-                            required
+                            
                         >
 
                         Mahasiswa
@@ -279,7 +307,7 @@ require __DIR__ . '/helpers.php';
                     <select
                         id="learning_mode"
                         name="learning_mode"
-                        required
+                       
                     >
 
                         <option value="">
@@ -313,7 +341,7 @@ require __DIR__ . '/helpers.php';
                     <select
                         id="package_count"
                         name="package_count"
-                        required
+                       
                     >
 
                         <?php for ($i = 1; $i <= 3; $i++): ?>
