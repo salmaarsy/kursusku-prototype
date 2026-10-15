@@ -1,28 +1,7 @@
-<?php
 
+<?php
 require __DIR__ . '/data.php';
 require __DIR__ . '/helpers.php';
-
-$errors = [];
-
-$name = '';
-$email = '';
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-    $name = trim($_POST['name'] ?? '');
-    $email = trim($_POST['email'] ?? '');
-
-    // Validasi nama
-    if ($name === '') {
-        $errors['name'] = 'Nama wajib diisi';
-    }
-
-    // Validasi email
-    if ($email === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $errors['email'] = 'Email tidak valid';
-    }
-}
 ?>
 
 <!doctype html>
@@ -34,130 +13,91 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <title>Daftar Kursus - KursusKu</title>
 
-    <!-- File CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
 
-    <!-- ================= HEADER ================= -->
+    <!-- HEADER -->
     <header class="site-header">
-
         <div class="container nav-wrap">
 
-            <!-- Logo / Brand -->
             <a class="brand" href="index.php">KursusKu</a>
 
-            <!-- Navigasi -->
             <nav aria-label="Navigasi utama">
                 <a href="index.php">Beranda</a>
                 <a href="index.php#katalog">Katalog</a>
                 <a href="fee-calculator.php">Biaya</a>
                 <a href="loop-lab.php">Loop Lab</a>
             </nav>
+
         </div>
     </header>
 
-
-    <!-- ================= MAIN CONTENT ================= -->
+    <!-- KONTEN UTAMA -->
     <main class="container">
 
-        <!-- Judul halaman -->
         <section class="page-intro">
+            <p class="eyebrow">Pendaftaran Kursus</p>
 
-            <p class="eyebrow">
-                Pendaftaran Kursus
-            </p>
-
-            <h1>
-                Mulai belajar bersama KursusKu
-            </h1>
+            <h1>Mulai belajar bersama KursusKu</h1>
 
             <p>
                 Lengkapi form berikut dengan data Anda untuk melakukan
                 pendaftaran kursus.
             </p>
-
         </section>
 
-
-        <!-- ================= FORM PENDAFTARAN ================= -->
+        <!-- FORM PENDAFTARAN -->
         <section class="form-card">
 
+            <!-- Arahkan form ke file pemrosesan -->
             <form
-                method="POST"
-                action=""
+                method="GET"
+                action="process-registration.php"
                 class="registration-form"
             >
 
-                <!-- Sumber form -->
                 <input
                     type="hidden"
                     name="source"
                     value="week-05"
                 >
 
+                <!-- NAMA -->
+                <div class="form-group">
+                    <label for="name">Nama Lengkap</label>
+                    <input
+                        id="name"
+                        name="name"
+                        type="text"
+                        maxlength="100"
+                        autocomplete="name"
+                        placeholder="Masukkan nama lengkap"
+                        required
+                    >
+                </div>
 
-                <!-- ================= NAMA ================= -->
-               
-<div class="form-group">
+                <!-- EMAIL -->
+                <div class="form-group">
+                    <label for="email">Email</label>
 
-    <label for="name">
-        Nama Lengkap
-    </label>
+                    <input
+                        id="email"
+                        name="email"
+                        type="email"
+                        maxlength="120"
+                        autocomplete="email"
+                        placeholder="contoh@email.com"
+                        required
+                    >
+                </div>
 
-    <input
-        id="name"
-        name="name"
-        type="text"
-        maxlength="100"
-        autocomplete="name"
-        placeholder="Masukkan nama lengkap"
-        value="<?= e($name) ?>"
-    >
-
-    <?php if (isset($errors['name'])): ?>
-        <small class="error-message">
-            <?= e($errors['name']) ?>
-        </small>
-    <?php endif; ?>
-
-</div>
-
-                <!-- ================= EMAIL ================= -->
-
-<div class="form-group">
-
-    <label for="email">
-        Email
-    </label>
-
-    <input
-        id="email"
-        name="email"
-        type="text"
-        maxlength="120"
-        autocomplete="email"
-        placeholder="contoh@email.com"
-        value="<?= e($email) ?>"
-    >
-
-    <?php if (isset($errors['email'])): ?>
-        <small class="error-message">
-            <?= e($errors['email']) ?>
-        </small>
-    <?php endif; ?>
-
-</div>
-
-                <!-- ================= HP + PRODI ================= -->
+                <!-- HP DAN PROGRAM STUDI -->
                 <div class="form-grid">
 
-                    <!-- Nomor HP -->
                     <div class="form-group">
-
-                        <label for="phone">
-                            Nomor HP
-                        </label>
+                        <label for="phone">Nomor HP</label>
 
                         <input
                             id="phone"
@@ -166,18 +106,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             maxlength="15"
                             autocomplete="tel"
                             placeholder="081234567890"
-    
                         >
-
                     </div>
 
-
-                    <!-- Program Studi -->
                     <div class="form-group">
-
-                        <label for="study_program">
-                            Program Studi
-                        </label>
+                        <label for="study_program">Program Studi</label>
 
                         <input
                             id="study_program"
@@ -185,184 +118,118 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             type="text"
                             maxlength="100"
                             placeholder="Contoh: Teknik Informatika"
-                            
                         >
-
                     </div>
 
                 </div>
 
-
-                <!-- ================= PILIH KURSUS ================= -->
+                <!-- PILIH KURSUS -->
                 <div class="form-group">
-
-                    <label for="course_code">
-                        Kursus yang Dipilih
-                    </label>
+                    <label for="course_code">Kursus yang Dipilih</label>
 
                     <select
                         id="course_code"
                         name="course_code"
-                     
+                        required
                     >
-
-                        <option value="">
-                            -- Pilih kursus --
-                        </option>
+                        <option value="">-- Pilih kursus --</option>
 
                         <?php foreach ($courses as $course): ?>
-
                             <option value="<?= e($course['code']) ?>">
                                 <?= e($course['name']) ?>
                                 - <?= formatRupiah($course['fee']) ?>
                             </option>
-
                         <?php endforeach; ?>
 
                     </select>
-
                 </div>
 
-
-                <!-- ================= TIPE PESERTA ================= -->
+                <!-- TIPE PESERTA -->
                 <fieldset class="form-group">
-
-                    <legend>
-                        Tipe Peserta
-                    </legend>
+                    <legend>Tipe Peserta</legend>
 
                     <label class="choice">
-
                         <input
                             type="radio"
                             name="participant_type"
                             value="mahasiswa"
-                            
+                            required
                         >
-
                         Mahasiswa
-
                     </label>
 
                     <label class="choice">
-
                         <input
                             type="radio"
                             name="participant_type"
                             value="guru"
                         >
-
                         Guru
-
                     </label>
 
                     <label class="choice">
-
                         <input
                             type="radio"
                             name="participant_type"
                             value="umum"
                         >
-
                         Umum
-
                     </label>
-
                 </fieldset>
 
-
-                <!-- ================= MINAT BELAJAR ================= -->
+                <!-- MINAT BELAJAR -->
                 <fieldset class="form-group">
-
-                    <legend>
-                        Minat Belajar
-                    </legend>
+                    <legend>Minat Belajar</legend>
 
                     <?php foreach ($interestOptions as $value => $label): ?>
-
                         <label class="choice">
-
                             <input
                                 type="checkbox"
                                 name="interests[]"
                                 value="<?= e($value) ?>"
                             >
-
                             <?= e($label) ?>
-
                         </label>
-
                     <?php endforeach; ?>
 
                 </fieldset>
 
-
-                <!-- ================= METODE BELAJAR ================= -->
+                <!-- METODE BELAJAR -->
                 <div class="form-group">
-
-                    <label for="learning_mode">
-                        Metode Belajar
-                    </label>
+                    <label for="learning_mode">Metode Belajar</label>
 
                     <select
                         id="learning_mode"
                         name="learning_mode"
-                       
+                        required
                     >
-
-                        <option value="">
-                            -- Pilih metode --
-                        </option>
-
-                        <option value="offline">
-                            Tatap Muka
-                        </option>
-
-                        <option value="online">
-                            Online
-                        </option>
-
-                        <option value="hybrid">
-                            Hybrid
-                        </option>
-
+                        <option value="">-- Pilih metode --</option>
+                        <option value="offline">Tatap Muka</option>
+                        <option value="online">Online</option>
+                        <option value="hybrid">Hybrid</option>
                     </select>
-
                 </div>
 
-
-                <!-- ================= JUMLAH PAKET ================= -->
+                <!-- JUMLAH PAKET -->
                 <div class="form-group">
-
-                    <label for="package_count">
-                        Jumlah Paket
-                    </label>
+                    <label for="package_count">Jumlah Paket</label>
 
                     <select
                         id="package_count"
                         name="package_count"
-                       
+                        required
                     >
-
                         <?php for ($i = 1; $i <= 3; $i++): ?>
-
                             <option value="<?= $i ?>">
                                 <?= $i ?> Paket
                             </option>
-
                         <?php endfor; ?>
-
                     </select>
-
                 </div>
 
-
-                <!-- ================= CATATAN ================= -->
+                <!-- CATATAN -->
                 <div class="form-group">
-
-                    <label for="notes">
-                        Catatan Tambahan
-                    </label>
+                    <label for="notes">Catatan Tambahan</label>
 
                     <textarea
                         id="notes"
@@ -375,17 +242,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <small class="help">
                         Maksimal 300 karakter.
                     </small>
-
                 </div>
 
-
-                <!-- ================= TOMBOL ================= -->
+                <!-- TOMBOL -->
                 <div class="form-actions">
-
                     <button type="submit">
                         Proses Pendaftaran
                     </button>
-
                 </div>
 
             </form>

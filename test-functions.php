@@ -17,3 +17,4 @@ foreach ($tests as [$name, $actual, $expected]) {
     echo ' | actual=' . $actual;
     echo ' | expected=' . $expected . '<br>';
 }
+?>

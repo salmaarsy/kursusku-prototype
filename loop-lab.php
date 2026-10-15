@@ -29,7 +29,6 @@ $facilities = [
     'Modul digital',
     'Sertifikat penyelesaian',
     'Forum diskusi kelas',
-    'MATAHARI',
 ];
 
 ?>
@@ -144,7 +143,7 @@ $facilities = [
 
         <ol>
 
-            <?php for ($i = 1; $i <= 5; $i++): ?>
+            <?php for ($i = 1; $i <= 3; $i++): ?>
 
                 <li>
                     Pertemuan ke-<?= $i ?>

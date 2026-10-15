@@ -493,15 +493,10 @@ $year = date('Y');
         controls
         width="640"
     >
-
         <source
             src="assets/video/video-kursus.mp4"
             type="video/mp4"
         >
-
-        Browser Anda tidak mendukung
-        video HTML5.
-
     </video>
 
 

@@ -2,7 +2,7 @@
 $rawName = ' Laravel Fundamental ';
 
 $cleanName = trim($rawName);
-$upperName = strtroupper($cleanName);
+$upperName = strtoupper($cleanName);
 $lowerName = strtolower($cleanName);
 $length = strlen($cleanName);
 $short =substr($cleanName, 0, 7);
@@ -17,6 +17,7 @@ echo $short
 <?php
 $start = new DateTimeImmuTable('2026-09-15');
 
-echo start->format(Y-m-d) . '<br>';
-echo start->format(d-m-Y) . '<br>';
-echo start->format(d/m/Y);
+echo $start->format("Y-m-d") . '<br>';
+echo $start->format("d-m-Y") . '<br>';
+echo $start->format("d/m/Y");
+?>

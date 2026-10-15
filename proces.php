@@ -53,14 +53,12 @@ $source = $_POST['source'] ?? '';
 
 
 // ==================================================
-// PASTIKAN INTERESTS BERBENTUK ARRAY
+// INTERESTS BERBENTUK ARRAY
 // ==================================================
 
 if (!is_array($interests)) {
     $interests = [];
 }
-
-
 // ==================================================
 // FILTER MINAT YANG DIIZINKAN
 // ==================================================
