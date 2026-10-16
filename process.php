@@ -130,6 +130,7 @@ if (!in_array(
 // ==================================================
 
 if ($errors !== []) {
+     http_response_code(422);
     ?>
 
     <!doctype html>
@@ -444,24 +445,17 @@ $interestText = $interestLabels !== []
                 <dd>
                     <?= e($interestText) ?>
                 </dd>
-
-
                 <dt>
                     Catatan
                 </dt>
-
                 <dd>
                     <?= $notes !== ''
                         ? e($notes)
                         : 'Tidak ada catatan'
                     ?>
                 </dd>
-
             </dl>
-
         </section>
-
-
         <!-- ================= RINGKASAN BIAYA ================= -->
 
         <section class="summary-card">

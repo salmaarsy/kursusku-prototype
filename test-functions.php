@@ -18,3 +18,16 @@ foreach ($tests as [$name, $actual, $expected]) {
     echo ' | expected=' . $expected . '<br>';
 }
 ?>
+
+<?php
+$READ = 1; //001
+$WRITE = 2; //010
+$DELETE =4; //100
+
+$permissions = $READ | $WRITE;
+$scanRead = ($permissions & $READ) === $READ;
+$scanWrite = ($permissions & $WRITE) === $WRITE;
+$scanDelete = ($permissions & $DELETE) === $DELETE;
+
+var_dump($scanRead, $scanWrite, $scanDelete);
+?>

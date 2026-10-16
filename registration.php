@@ -53,7 +53,7 @@ require __DIR__ . '/helpers.php';
 
             <!-- Arahkan form ke file pemrosesan -->
             <form
-                method="GET"
+                method="POST"
                 action="process-registration.php"
                 class="registration-form"
             >
@@ -67,6 +67,7 @@ require __DIR__ . '/helpers.php';
                 <!-- NAMA -->
                 <div class="form-group">
                     <label for="name">Nama Lengkap</label>
+
                     <input
                         id="name"
                         name="name"
